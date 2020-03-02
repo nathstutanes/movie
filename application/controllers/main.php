@@ -1,5 +1,5 @@
 <?php
-	class mycart extends CI_Controller{
+	class Main extends CI_Controller{
 		  public function __construct(){
 		        parent::__construct();
 		  }
@@ -23,38 +23,38 @@ function login_validation()
 	{
 		//true
 		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$pass = $this->input->post('password');
 		//model function
-		$this->load->model('main_model');
-		if($this->main_model->can_login($username,$password))
+		$this->load->model('Main_Model');
+		if($this->Main_Model->can_login($username,$pass))
 		{
 			$session_data = array(
-				'username' => $username
-				
+				'username' => $username	
 			);
 			$this->session->set_userdata($session_data);
-			redirect(base_url(). 'main/enter');
-
+			redirect(base_url().'Main/enter', 'refresh');
 		}
 		else
 		{
 			$this->session->set_flashdata('error', 'Invalid Username and Password');
-			redirect(base_url(). 'main/login');
+			redirect(base_url().'Welcome');
 
 		}
 	}
 	else
-	{
+	{ 
 		//false
-		$this->login();
+		redirect('Main/login');
+
 	}
 }
 function enter(){
 	if($this->session->userdata('username') != '')
 	{
 		echo '<h2>Welcome - '.$this->session->userdata('username').'</h2>';
-		echo '<a href="'.base_url().'main/logout">Logout</a>';
-
+		echo '<a href="'.base_url().'Main/logout">Logout</a>';
+		$this->load->view('Welcome');
+		$this->load->view('films_index');
 	}
 	else
 	{

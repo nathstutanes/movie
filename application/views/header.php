@@ -13,42 +13,43 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <title>Hello, world!</title>
-    <script
-  type="text/javascript"
-  src="https://use.fontawesome.com/releases/v5.10.2/js/conflict-detection.js">
-</script>
-  </head>
-  <body>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <style class="cp-pen-styles"></style>
+  <script type="text/javascript" src="https://use.fontawesome.com/releases/v5.10.2/js/conflict-detection.js"></script>
+  <title>Hello, world!</title>
+</head>
+<body>
 
 	<div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <h4><a href="<?php echo base_url();  ?>" class="text-white, btn btn-primary">HARLIE</a></h4>
       <span class="text-muted">Movies for free.</span><br>
-       <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle, text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <i class="fa fa-plus"> Create </i>
+         <i class="fa fa-database"> Database </i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Film</a>
-          <a class="dropdown-item" href="Create/Actor">Actor</a>
+          <?php echo anchor('Create/read_all_films' , 'Films', 'class="dropdown-item"'); ?>
+          <?php echo anchor('Create/read_all_actors' , 'Actor', 'class="dropdown-item"'); ?>
+          <?php echo anchor('Create/read_all_genre' , 'Genre', 'class="dropdown-item"'); ?>
           <a class="dropdown-item" href="#">Producer</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="views/login">click to login</a>
+          <a class="dropdown-item" href="Welcome/login">click to login</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
+       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle, text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-edit"> Up/Del </i>
+        <i class="fa fa-edit"> Cre/Up/Del </i> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Film</a>
-          <a class="dropdown-item" href="#">Actor</a>
+          <?php echo anchor('Create/films' , 'Film', 'class="dropdown-item"'); ?>
+          <?php echo anchor('Create/actor' , 'Actor', 'class="dropdown-item"'); ?>
+           <?php echo anchor('Create/genre' , 'Genre', 'class="dropdown-item"'); ?>
           <a class="dropdown-item" href="#">Producer</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="views/login">click to login</a>
+          <a class="dropdown-item" href="Welcome/login">click to login</a>
         </div>
       </li>
     </div>
@@ -58,9 +59,7 @@
       <span class="navbar-toggler-icon"></span>
       <span>HARLIE</span>
     </button>
-    <h4><a href="<?php echo base_url('');  ?>" class="fa fa-unlock">LOGIN</a></h4>
-      <a href="views/login" class="text-white"><i class="fa fa-unlock">     LOGIN    </i></a>
+    <?php echo anchor('Welcome/login' , 'login', 'class="dropdown-item fa fa-unlock"'); ?>
+     <?php echo anchor('Main/login' , 'logout', 'class="dropdown-item fa fa-lock"'); ?>
   </nav>
 </div>
-  </body>
-</html>

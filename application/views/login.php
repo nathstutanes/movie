@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Complete User Registration and Login System in Codeigniter</title>
+    <title>LOGIN TO HARLIE MOVIES</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 
@@ -26,8 +26,8 @@
             </div>
             <div class="form-group">
                 <input type="submit" name="insert" value="Login" class="btn-btn-info"/>
-                <?php
-                echo $this->session->flashdata("error");
+                <!-- <?php
+                //echo $this->session->flashdata("error"); ?> -->
             </div>
         </form>
     </div>
