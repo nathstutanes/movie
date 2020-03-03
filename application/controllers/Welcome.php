@@ -25,7 +25,6 @@ class Welcome extends CI_Controller {
 		// print_r($data);
 		$this->load->view('header', $data);
 		$this->load->view('films_index' , $data);
-		print_r($_SESSION);
 
 	}
 	public function login()

@@ -10,7 +10,7 @@
 		{
 			parent::__construct();
 		}
-
+			
 		function get_last_id_Film(){
 			$last = $this->db->order_by('lngFilmTitleID',"desc")
 				->limit(1)
@@ -43,14 +43,14 @@
 				);
 			}
 
-				$config['upload_path'] = './posters/';
-				$config['allowed_types'] = 'gif|jpg|png';
-				$config['max_size'] = '0';
-				$config['remove_spaces'] = true;
-				$config['overwrite'] = false;
-				$config['max_width'] = '0';
-				$config['max_height'] = '0';
-				$this->load->library('upload', $config);
+			$config['upload_path'] = './images/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size'] = '255';
+			$config['remove_spaces'] = true;
+			$config['overwrite'] = false;
+			$config['max_width'] = '0';
+			$config['max_height'] = '0';
+			$this->load->library('upload', $config);
 				if(!$this->upload->do_upload('image')){
 					echo $this->upload->display_errors();
 					exit();
@@ -101,12 +101,12 @@
 				   'intFilmDuration' => $du,
 				   'intFilmGenreID' => $gr,
 				   'lngFilmCertificateID' => $cert,
-				   'memFilmAdditionalInfo' => $inf
+				   'memFilmAdditionalInfo' => $inf	
 			);
 
 			$config['upload_path'] = './posters/';
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size'] = '200';
+			$config['max_size'] = '255';
 			$config['remove_spaces'] = true;
 			$config['overwrite'] = false;
 			$config['max_width'] = '0';
@@ -150,13 +150,13 @@
 					$data['memFilmStory'] = $row['memFilmStory'];
 					$data['dtmFilmReleaseDate'] = $row['dtmFilmReleaseDate'];
 					$data['intFilmDuration'] = $row['intFilmDuration'];
-					$genre = $row['intFilmGenreID'];
+					$genre= $row['intFilmGenreID'];
 					$cert = $row['lngFilmCertificateID'];
 					$data['memFilmAdditionalInfo'] = $row['memFilmAdditionalInfo'];	
 					$data['image'] = $row['image'];
 				}
 			}
-			$data['lngFilmGenreID']= $this->MGenre->read_genre_byid($genre);
+			$data['lngGenreID']= $this->MGenre->read_genre_byid($genre);
 			$data['lngFilmCertificateID']= $this->MCert->read_cert_byid($cert);
 			$query->free_result();
 			return $data;

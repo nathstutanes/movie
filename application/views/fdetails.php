@@ -12,7 +12,7 @@ require_once 'header.php';
     <span class="badge badge-pill badge-secondary">Story</span>
     <p class="card-text"><?php echo $films['memFilmStory'];  ?></p>
     <span class="badge badge-pill badge-info">Genre</span>
-    <p class="card-text"><?php echo $films['lngFilmGenreID'];  ?></p>
+    <p class="card-text"><?php echo $films['lngGenreID'];  ?></p>
     <span class="badge badge-pill badge-info">Certificate</span>
     <p class="card-text"><?php echo $films['lngFilmCertificateID'];  ?></p>
         <span class="badge badge-pill badge-info">Info</span>

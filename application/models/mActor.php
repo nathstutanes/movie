@@ -49,7 +49,7 @@ class MActor extends CI_Model {
 
 		$config['upload_path'] = './images/';
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size'] = '200';
+		$config['max_size'] = '255';
 		$config['remove_spaces'] = true;
 		$config['overwrite'] = false;
 		$config['max_width'] = '0';

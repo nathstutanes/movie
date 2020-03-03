@@ -34,7 +34,7 @@
           <?php echo anchor('Create/read_all_films' , 'Films', 'class="dropdown-item"'); ?>
           <?php echo anchor('Create/read_all_actors' , 'Actor', 'class="dropdown-item"'); ?>
           <?php echo anchor('Create/read_all_genre' , 'Genre', 'class="dropdown-item"'); ?>
-          <a class="dropdown-item" href="#">Producer</a>
+          <?php echo anchor('Create/read_all_producer' , 'Producer', 'class="dropdown-item"'); ?>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="Welcome/login">click to login</a>
         </div>
@@ -47,7 +47,7 @@
           <?php echo anchor('Create/films' , 'Film', 'class="dropdown-item"'); ?>
           <?php echo anchor('Create/actor' , 'Actor', 'class="dropdown-item"'); ?>
            <?php echo anchor('Create/genre' , 'Genre', 'class="dropdown-item"'); ?>
-          <a class="dropdown-item" href="#">Producer</a>
+           <?php echo anchor('Create/producer' , 'Producer', 'class="dropdown-item"'); ?>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="Welcome/login">click to login</a>
         </div>

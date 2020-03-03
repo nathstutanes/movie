@@ -1,7 +1,7 @@
 <?php
 
 /**
- * class for certificate modle
+ * class for certificate model 
  */
 class MGenre extends CI_Model
 {
@@ -9,12 +9,17 @@ class MGenre extends CI_Model
 	{
 		parent::__construct();
 	}
-
+	function add_genre(){
+		$data = array(
+			'strGenre' => ($_POST['strGenre'])
+		);
+		$this->db->insert('tblfilmgenres', $data);
+	}
 	function read_genre(){
 		$genre = $this->db->get('tblfilmgenres');
 		return $genre->result();
 	} //end of read genre
-
+	
 	function read_genre_byid($id){
 		$data = array();
 			$this->db->select('strGenre');
@@ -25,8 +30,8 @@ class MGenre extends CI_Model
 			}
 			$cert = $data->strGenre;
 			$query->free_result();
-			return $genre;
-	}
+			return $data;
+	} 
 }// end of class genre
 
   ?>

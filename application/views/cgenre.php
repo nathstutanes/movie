@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-echo form_open_multipart('Create/genre_create'); 
+secho form_open_multipart('Create/genre_create'); 
 echo form_label('Genre: ');
 echo "<br>";
 $data = array(
