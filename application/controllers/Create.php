@@ -138,17 +138,53 @@ class Create extends CI_Controller{
 		function producer(){
 			$this->load->view('cproducer');
 		}
-
-		function producer_create(){
-			if($this->MProducer->add_producer()){
-				redirect('Create/read_all_producer', 'refresh');
+	
+		function prod_create(){
+			if (isset($_POST['strProducerName'])) {
+				$data['prod']= $this->MProd->add_prod();
+				$this->load->view('rprod', $data);
+				redirect('Create/read_all_prods', $data);
+			} else {
+				reidrect('Create/producer', 'refresh');
 			}
-		} // end of add producer
-
-		function read_all_producer(){	
-			$data['producer'] = $this->MProducer->read_producer();
-			$this->load->view('rproducer', $data);
-		}// end of view producer
+		}
+	
+		function read_all_prods(){
+			$data['prod'] = $this->MProd->read_all_prods();
+			$this->load->view('rprod', $data);
+		}
+		
+		function edit_prod($id=0) {
+			$id = $this->uri->segment(3);
+			$data['prod'] = $this->MProd->read_prod_byid($id);
+			// print_r($data);
+			$this->load->view('eprod',$data);
+		}
+	
+		function prod_edit(){
+			if (isset($_POST['strProducerName'])) {
+				if($this->MProd->prod_edit()){
+					redirect('Create/read_all_prods','refresh');
+				}
+			} else {
+				redirect('Create/edit_prod', 'refresh');
+			}
+		}//end of prod edit
+	
+		function del_prod($id = 0){
+			$id = $this->uri->segment(3);
+			if($this->MProd->del_prod($id)){
+				redirect('Create/read_all_prods', 'refresh');
+			} 
+		}
+	
+		function rating(){
+			$rated = $_POST['btnClickedValue'];
+			echo $rated; 
+			redirect('Create/film', 'refresh');
+		}
+	} //end of create 
+	?>
 	
 }	
 ?>

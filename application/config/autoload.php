@@ -126,4 +126,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('MActor', 'MFilms', 'MGenre', 'MCert', 'Main_Model');
+$autoload['model'] = array('MActor', 'MFilms', 'MGenre', 'MCert', 'Main_Model', 'MProd');
